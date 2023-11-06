@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Tahoma, Arial;
+}
+.quiz-app {
+  margin: 20px auto;
+  width: 800px;
+  background-color: #f8f8f8;
+  padding: 15px;
+}
+.quiz-app .quiz-info {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+}
+.quiz-app .quiz-info .category {
+  flex: 1;
+}
+.quiz-app .quiz-info .count {
+  flex: 1;
+  text-align: right;
+}
+.quiz-app .quiz-area {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 15px;
+}
+.quiz-app .quiz-area h2 {
+  margin: 0;
+}
+.quiz-app .answers-area {
+  background-color: #fff;
+  padding: 0 20px 20px;
+}
+.quiz-app .answers-area .answer {
+  background-color: #f9f9f9;
+  padding: 15px;
+}
+.quiz-app .answers-area .answer:not(:last-child) {
+  border-bottom: 1px solid #dfdfdf;
+}
+.quiz-app .answers-area .answer input[type="Radio"]:checked + label {
+  color: #0075ff;
+}
+.quiz-app .answers-area .answer label {
+  cursor: pointer;
+  font-weight: bold;
+  color: #777;
+  font-size: 14px;
+  margin-left: 5px;
+  position: relative;
+  top: -1px;
+}
+.quiz-app .submit-button {
+  background-color: #0075ff;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 20px auto;
+}
+.quiz-app .submit-button:focus {
+  outline: none;
+}
+.quiz-app .bullets {
+  border-top: 1px solid #dfdfdf;
+  background-color: #fff;
+  display: flex;
+  padding: 20px;
+}
+.quiz-app .bullets .spans {
+  flex: 1;
+  display: flex;
+}
+.quiz-app .bullets .spans span {
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.quiz-app .bullets .spans span.on {
+  background-color: #0075ff;
+}
+.quiz-app .results span {
+  font-weight: bold;
+}
+.quiz-app .results span.bad {
+  color: #dc0a0a;
+}
+.quiz-app .results span.good {
+  color: #009688;
+}
+.quiz-app .results span.perfect {
+  color: #0075ff;
+}
+/* ///fetch
+//
+let qname = document.querySelector(".question h1");
+let category = document.querySelector(".question h2");
+let question = document.querySelector(".question p");
+let section = document.querySelectorAll(".question .section");
+let counterOld = document.querySelector(".question .counter .old");
+let counterNew = document.querySelector(".question .counter .all");
+// console.log(name)
+// console.log(category)
+// console.log(question)
+// console.log(section)
+// console.log(counterOld)
+// console.log(counterNew)
+let data = {
+    "html": {
+        "Question-01": "what mean the html ?",
+        "sections-01":["html","html1","html2","html3"],
+        "ANSWER-01": "html",
+        "Question-02": "what mean the css ?",
+        "sections-02":["css","css1","css2","css3"],
+        "ANSWER-02": "css"
+    },
+    "css": {
+        "Question-01": "what mean the css ?",
+        "ANSWER-01": "what mean the html ?"
+    }
+}
+// for(let i = 0;i<3;i++){
+    let y = data.html
+    let keys = Object.keys(y)
+    // console.log(keys)
+keys.forEach((e)=>{
+    let v = e.toString();
+    if(v.startsWith("Question")){     
+        let arr = [];
+        arr.unshift(e);
+        let randomNum =Math.floor(Math.random() * arr.length);   
+        console.log(arr);
+    }
+})
+// }
+let dataa = Object.keys(data);
+let dataaa = Object.keys(data.html);
+// console.log(dataaa);
+let random =Math.floor(Math.random() * dataa.length);
+category.innerHTML = dataa[random];
+for(let i = 0 ; i<4; i++){
+    section[i].innerHTML = data.html["sections-01"][i]
+}
+question.innerHTML = data.html["Question-01"];
+section.forEach((e)=>{
+    e.onclick = function(){
+    let TheSelectAnswer = e.innerHTML;
+    e.classList.add("selected");
+    console.log(TheSelectAnswer);
+    if(TheSelectAnswer === data.html["ANSWER-01"]){
+        changeQuestion();
+    }
+}
+})
+function changeQuestion(){
+    let random =Math.floor(Math.random());
+    // question.innerHTML = data.html[`Question-0#{i}`];
+} */
